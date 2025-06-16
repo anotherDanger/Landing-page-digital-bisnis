@@ -1,0 +1,45 @@
+.font-bebas {
+  font-family: 'Bebas Neue',cursive;
+}
+
+.font-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-sirin {
+  font-family: 'Sirin Stencil', cursive;
+}
+
+.navbar {
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.7); /* Atur warna sesuai kebutuhan */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* laptop */
+@media (max-width: 992px){
+    html{
+        font-size: 90%;
+    }
+}
+
+@media (max-width:880px){
+    html{
+        font-size: 80%;
+    }
+}
+
+@media(max-width: 576px){
+    html{
+        font-size: 64%;  
+    }
+    
+} 
