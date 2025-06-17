@@ -1,8 +1,8 @@
-  AOS.init({
-    duration: 700,
-     once: false,        // supaya bisa animasi berkali-kali
+   AOS.init({
+    duration: 500,
+    once: true,        // supaya bisa animasi berkali-kali
     mirror: true,       // animasi saat scroll naik juga
-    offset: 100 // bisa atur jarak trigger kalau perlu
+    offset: 120 // bisa atur jarak trigger kalau perlu
   });
   
   
@@ -15,14 +15,28 @@
     }
   });
 
-const menu = document.querySelector('.menu');
- const hamburger = document.querySelector('.hamburger');
- hamburger.addEventListener('click', function() {
-    
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('flex');
-    menu.classList.toggle('z-999');
-    menu.classList.toggle('translate-y-0');
-    menu.classList.toggle('-translate-y-full');
- });
 
+
+ 
+const menu = document.getElementById('menu');
+const hamburger = document.getElementById('hamburger');
+
+hamburger.addEventListener('click', function() {
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    menu.classList.add('flex');
+    menu.classList.add('z-99');
+    setTimeout(() => {
+    menu.classList.remove('-translate-y-10','opacity-0');
+    menu.classList.add('translate-y-0','opacity-100');
+    }, 10);
+  } else {
+    menu.classList.remove('flex');
+    menu.classList.remove('translate-y-0','opacity-100')
+    menu.classList.add('-translate-y-10','opacity-0');
+    // Sembunyikan setelah transisi
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 500); // Sesuai duration-500
+  }
+});

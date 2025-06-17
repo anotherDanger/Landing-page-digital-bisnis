@@ -45,25 +45,23 @@
               </ul>
             </div>
             
-            <div class="relative hidden md:inline ">
-              <input 
-              type="text" placeholder="Search...."class="w-full rounded-2xl pl-5 border-2 focus:outline-none border-orange-400 focus:ring-2  focus:ring-orange-400">
-              <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-orange-400 ">    
-              </button>
+            <div class="hidden  md:inline bg-orange-400 hover:bg-orange-600 px-10 py-1 rounded-md ">
+              <button class="cursor-pointer text-white ">Login</button>
             </div>
             
             <div class="md:hidden">
-              <i class="hamburger fa-solid fa-bars fa-2xl cursor-pointer"></i>
+              <i id="hamburger" class="fa-solid fa-bars fa-2xl cursor-pointer"></i>
             </div>
           </div>
       </nav>
       <!-- navabr mobile -->
-      <div class="md:hidden w-full backdrop-blur-3xl menu fixed hidden flex-col shadow-md p-5 space-y-5   transition-transform duration-300 ease-in-out transform -translate-y-full top-20 ">
+      <div id="menu" class=" md:hidden w-full backdrop-blur-3xl fixed hidden flex-col shadow-md p-5 space-y-5 top-20  duration-500">
           <ul class="">
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#beranda">Beranda</a></li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#menu">Menu</a> </li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#tentang">Tentang Kami</a></li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#kontak">Kontak</a></li>
+                <li ><a class=" hover:text-orange-400 hover:underline font-serif cursor-pointer" href="#beranda">Beranda</a></li>
+                <li ><a class=" hover:text-orange-400 hover:underline font-serif cursor-pointer" href="#menu">Menu</a> </li>
+                <li ><a class=" hover:text-orange-400 hover:underline font-serif cursor-pointer" href="#tentang">Tentang Kami</a></li>
+                <li ><a class=" hover:text-orange-400 hover:underline font-serif cursor-pointer" href="#kontak">Kontak</a></li>
+                <li ><a class=" hover:text-orange-400 hover:underline font-serif cursor-pointer" href="#kontak">Login</a></li>
           </ul>
       </div>
    </section>
