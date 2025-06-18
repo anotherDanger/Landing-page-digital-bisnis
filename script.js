@@ -1,4 +1,4 @@
-   AOS.init({
+AOS.init({
     duration: 500,
     once: false,        // supaya bisa animasi berkali-kali
     mirror: true,       // animasi saat scroll naik juga
@@ -15,9 +15,6 @@
     }
   });
 
-
-
- 
 const menu = document.getElementById('menu');
 const hamburger = document.getElementById('hamburger');
 
@@ -39,4 +36,18 @@ hamburger.addEventListener('click', function() {
       menu.classList.add('hidden');
     }, 500); // Sesuai duration-500
   }
+});
+
+
+const buttonRight = document.getElementById('buttonRight');
+const buttonLeft = document.getElementById('buttonLeft');
+const containerSideScroll = document.getElementById('containerSideScroll');
+
+buttonLeft.addEventListener('click',function(){
+  containerSideScroll.scrollBy({left:-200,behavior:'smooth'});
+});
+
+
+buttonRight.addEventListener('click',function(){
+  containerSideScroll.scrollBy({left:200,behavior:'smooth'});
 });

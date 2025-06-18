@@ -35,7 +35,7 @@
               <img src="./img/Cream and Black Simple Elegant Catering Food Logo_20250430_175358_0000.png" alt="LOGO" class="w-15 rounded-full" loading="lazy">
               <h4 class="font-bold font-">KHAIRA CATERING</h4>
             </div>
-            
+      
             <div class="hidden md:inline ">
               <ul class="flex space-x-8 pt-5 ">
                 <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#beranda">Beranda</a></li>
@@ -112,13 +112,20 @@
       </div>
     </div>
 
+    <section class="inline md:hidden">
+      <div class="relative">
+          <button id="buttonLeft" class="absolute left-10 top-111 z-999 bg-orange-400 text-white hover:bg-orange-600  rounded-full w-10 h-10 m-auto"><i class="fa-solid fa-arrow-left fa-xs hover:scale-100"></i></button>
+          <button id="buttonRight"  class="absolute top-111 z-999 bg-orange-400 text-white h-10 w-10 rounded-full right-10  hover:bg-orange-600 "><i class="fa-solid fa-arrow-right fa-xs"></i></button>
+      </div>
+    </section>
+
   <section class="mt-0 py-16 mx-15 lg:px-4 md:mx-10 "  id="menu">
       <div class="max-w-6xl mx-auto text-center mt-12">
        <h2 data-aos="fade-up" class="text-4xl font-bold text-gray-800 mb-4" >Menu Andalan Kami</h2>
       <p data-aos="fade-up" class="text-gray-600 mb-10"  data-aos-delay="200">
         Pilih dari berbagai jenis paket sesuai kebutuhan acara Anda. Semua menu bisa disesuaikan dan diolah dengan bahan berkualitas dan rasa terbaik.
       </p>
-        <div class="grid gap-8 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div id="containerSideScroll" class="harizontalscrolbar flex overflow-x-auto md:overflow-hidden whitespace-nowrap md:grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           
           <!-- Nasi Box -->
           <div data-aos="fade-right" class="bg-gray-100 rounded-2xl shadow p-6  transition hover:shadow-lg border-t-4 border-b-4 border-orange-400">
