@@ -1,8 +1,8 @@
 AOS.init({
     duration: 500,
-    once: false,        // supaya bisa animasi berkali-kali
-    mirror: true,       // animasi saat scroll naik juga
-    offset: 120 // bisa atur jarak trigger kalau perlu
+    once: false,
+    mirror: true,
+    offset: 120
   });
   
   
