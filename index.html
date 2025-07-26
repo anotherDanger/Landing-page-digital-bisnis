@@ -9,9 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sirin+Stencil&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
+
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <!-- Splide JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.4.4/dist/js/splide-extension-auto-scroll.min.js"></script>
   <style>
   body {
     overflow-x: hidden;
@@ -21,107 +26,113 @@
 
 </head>
 <body class="">
+  <!-- wa -->
+    <a id="whatsapp-icon" href="https://wa.me/6285876192926" target="_blank"
+        class="fixed bottom-4 right-4 bg-green-500 text-white p-4 shadow-lg hover:bg-green-600 transition w-15 h-15 text-center rounded-full z-2">
+        <i class="fa-brands fa-whatsapp fa-2xl"></i>
+    </a>
+
   <!-- Header -->   
    <header>
     <section>
-      <nav class="">
-          <div class="fixed top-0 w-full navbar px-8 lg:px-10 m-auto flex justify-between items-center h-20 z-999" >
+      <nav class="overflow-hidden">
+          <div class="fixed top-0 w-full navbar px-8 lg:px-10 m-auto flex justify-between items-center h-20 z-2" >
             <div class="flex space-x-5 b w-1/5 items-center ">
-              <img src="./img/Cream and Black Simple Elegant Catering Food Logo_20250430_175358_0000.png" alt="LOGO" class="w-15 rounded-full">
+              <img src="./img/Cream and Black Simple Elegant Catering Food Logo_20250430_175358_0000.png" alt="LOGO" class="w-15 rounded-full" loading="lazy">
               <h4 class="font-bold font-">KHAIRA CATERING</h4>
             </div>
-            
+      
             <div class="hidden md:inline ">
               <ul class="flex space-x-8 pt-5 ">
                 <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#beranda">Beranda</a></li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#menu">Menu</a> </li>
+                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#MainMenu">Menu</a> </li>
                 <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#tentang">Tentang Kami</a></li>
                 <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#kontak">Kontak</a></li>
               </ul>
             </div>
             
-            <div class="relative hidden md:inline ">
-              <input 
-              type="text" placeholder="Search...."class="w-full rounded-2xl pl-5 border-2 focus:outline-none border-orange-400 focus:ring-2  focus:ring-orange-400">
-              <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-orange-400 ">    
-              </button>
+            <div class="hidden  md:inline bg-orange-400 hover:bg-orange-600 px-10 py-1 rounded-md ">
+              <button class="cursor-pointer text-white ">Login</button>
             </div>
             
             <div class="md:hidden">
-              <i class="hamburger fa-solid fa-bars fa-2xl cursor-pointer"></i>
+              <i id="hamburger" class="fa-solid fa-bars fa-2xl cursor-pointer"></i>
             </div>
           </div>
       </nav>
       <!-- navabr mobile -->
-      <div class="md:hidden w-full backdrop-blur-3xl menu fixed hidden flex-col shadow-md p-5 space-y-5   transition-transform duration-300 ease-in-out transform -translate-y-full top-20 ">
+      <div id="menu" class=" md:hidden w-full backdrop-blur-3xl fixed hidden flex-col shadow-md py-5 space-y-5 top-20 duration-500 text-2xl font-serif text-orange-400 text-center">
           <ul class="">
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#beranda">Beranda</a></li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#menu">Menu</a> </li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#tentang">Tentang Kami</a></li>
-                <li class=" hover:text-orange-400 hover:underline font-serif cursor-pointer"><a href="#kontak">Kontak</a></li>
+                <li class="mb-3 py-2 w-screen" ><a class=" hover:text-orange-600 hover:underline font-serif cursor-pointer " href="#beranda">Beranda</a></li>
+                <li class="mb-3  w-screen pb-3" ><a class=" hover:text-orange-600 hover:underline font-serif cursor-pointer" href="#MainMenu">Menu</a> </li>
+                <li class="mb-3  w-screen pb-3" ><a class=" hover:text-orange-600 hover:underline font-serif cursor-pointer" href="#tentang">Tentang Kami</a></li>
+                <li class="mb-3  w-screen pb-3" ><a class=" hover:text-orange-600 hover:underline font-serif cursor-pointer" href="#kontak">Kontak</a></li>
+                <li class="mb-3  w-screen pb-3" ><a class=" hover:text-orange-600 hover:underline font-serif cursor-pointer" href="#kontak">Login</a></li>
           </ul>
       </div>
    </section>
 
     <section id="beranda">
-      <div class="mt-25 m-auto lg:flex  justify-between items-center  min-h-[620px] overflow-visible text-center lg:text-left">
+      <div class="mt-25 m-auto lg:flex  lg:justify-between  min-h-[620px] overflow-visible  lg:text-left">
     
         <div data-aos="fade-right" class="flex-shrink min-w-0 p-5 pl-20">
           <h3 data-aos="fade-right" class="font-vibes font-bold text-5xl mb-2">Khaira Catering</h3>
-          <h3 data-aos="fade-up" class="mb-5 font-bebas md:text-4xl lg:text-6xl ">
+          <h3  class="mb-5 font-bebas md:text-4xl lg:text-6xl ">
             <span class="text-orange-400">Menghidangkan</span> Cita Rasa <span class="text-orange-400">Mengikat</span> Kenangan
           </h3>
           <h1 data-aos="fade-right" class="mb-5 text-2xl md:text-3xl text-red-600 font-bold">Harga Terjangkau</h1>
-          <p data-aos="fade-right" class="font-opensans mb-5 rounded-2xl border-2 border-orange-400 p-3">
+          <p data-aos="fade-right" class="font-opensans mb-5 rounded-2xl border-2 border-orange-400 p-3 w-3/4">
             🎁 Dapatkan diskon hingga 20% untuk pemesanan di atas 50 porsi! Stok terbatas,
             pesan sekarang dan rasakan kenikmatannya.
           </p>
-          <div data-aos="fade-down" class=" hidden md-inline lg:inline  py-1 px-2 rounded-lg bg-orange-400 text-white shadow-xl/20 w-35 text-center hover:bg-orange-600">
+          <div  class="hidden md:block md:animate-bounce md-flex w-35 text-center py-1 px-2 rounded-lg bg-orange-400 text-white  shadow-lg hover:bg-orange-600 ">
             <a href="" class="">Pesan Sekarang</a>
           </div>
-          <h3 data-aos="fade-up" class="my-5 text-2xl font-bebas" >Kami melayani area Cilacap dan sekitarnya</h3>
+          <h3  class="my-5 text-2xl font-bebas" >Kami melayani area Cilacap dan sekitarnya</h3>
         </div>
 
           <div data-aos="fade-left" class="flex-shrink-0 flex justify-end ">
             <img src="./img/WhatsApp Image 2025-06-15 at 02.26.14_b6615c72.png" 
-                alt="" 
+                alt="" loading="lazy"
                 class="pl-20 md:h-[30rem] lg:h-[690px] w-auto object-cover ">
           </div>
-          <div class="mt-20">
-            <div data-aos="fade-down" class="inline md-hidden lg:hidden py-3 px-4 rounded-lg bg-orange-400 text-white shadow-xl/20 w-35 text-center hover:bg-orange-600">
-              <a href="" class="">Pesan Sekarang</a>
+          <div class="mt-20 text-center grid items-center">
+              <div  class="inline md-hidden lg:hidden py-3 px-4 rounded-lg bg-orange-400 text-white shadow-xl/20 w-45  hover:bg-orange-600 mx-auto animate-bounce">
+                <a href="" class="">Pesan Sekarang</a>
             </div>      
           </div>
         </div>
       </section>
   </header>
 
- 
-
     <div class="relative">
-      <div data-aos="fade-down" class="absolute inset-x-0 top-[650px]  md:h-[200px] lg:h-[300px] w-[100%] bg-orange-400 -z-10 ">
-         
+      <div  class="absolute inset-x-0 top-[650px]  md:h-[200px] lg:h-[300px] w-[100%] bg-orange-400 -z-10 "> 
       </div>
     </div>
-    <div class="relative">
-      <div data-aos="fade-up" class="hidden md:inline lg:hidden absolute inset-x-0 top-[1250px]  h-[200px] w-[100%] bg-orange-400 -z-10 ">
-
-      </div>
+      <div class="relative">
+      <div  class="hidden md:inline lg:hidden absolute inset-x-0 top-[1250px]  h-[200px] w-[100%] bg-orange-400 -z-10 "> </div>
     </div>
 
-  <section class="mt-0 py-16 mx-15 lg:px-4 md:mx-10 "  id="menu">
+    <section class="inline md:hidden">
+      <div class="relative">
+          <button data-aos="fade-right" id="buttonLeftmenu" class="absolute left-10 top-111 z-2 bg-orange-400 text-white hover:bg-orange-600  rounded-full w-10 h-10 m-auto "><i class="fa-solid fa-arrow-left fa-xs hover:scale-100"></i></button>
+          <button data-aos="fade-left" id="buttonRightmenu"  class="absolute top-111 z-2 bg-orange-400 text-white h-10 w-10 rounded-full right-10  hover:bg-orange-600 "><i class="fa-solid fa-arrow-right fa-xs"></i></button>
+      </div>
+    </section>
+
+  <section class="mt-0 py-16 mx-15 lg:px-4 md:mx-10 " id="MainMenu">
       <div class="max-w-6xl mx-auto text-center mt-12">
-       <h2 class="text-4xl font-bold text-gray-800 mb-4" data-aos="fade-down">Menu Andalan Kami</h2>
-      <p class="text-gray-600 mb-10" data-aos="fade-down" data-aos-delay="200">
+       <h2 data-aos="fade-up" class="text-4xl font-bold text-gray-800 mb-4" >Menu Andalan Kami</h2>
+      <p data-aos="fade-up" class="text-gray-600 mb-10"  data-aos-delay="200">
         Pilih dari berbagai jenis paket sesuai kebutuhan acara Anda. Semua menu bisa disesuaikan dan diolah dengan bahan berkualitas dan rasa terbaik.
       </p>
-        <div class="grid gap-8 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div id="containerSideScrollmenu" class="harizontalscrolbar flex overflow-x-auto md:overflow-hidden whitespace-nowrap md:grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           
           <!-- Nasi Box -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6  transition hover:shadow-lg border-t-4 border-b-4 border-orange-400">
-            <h3 class=" text-xs md:text-xs font-semibold text-orange-400 mb-3"> Nasi Box</h3>
+          <div data-aos="fade-right" class="bg-gray-100 rounded-2xl shadow p-6  transition hover:shadow-lg border-t-4 border-b-4 border-orange-400">
+            <h3 class=" text-xs md:text-xl font-semibold text-orange-400 mb-3"> Nasi Box</h3>
             <div class="my-5 ">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/original/CATERING13.png" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/original/CATERING13.png" alt="" loading="lazy">
             </div>
             <ul class="text-xs md:text-xl text-gray-700 space-y-1">
               <li>Paket Ekonomis</li>
@@ -132,12 +143,12 @@
           </div>
 
           <!-- Prasmanan -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
-            <h3 class="text-xs md:text-xs font-semibold text-orange-400 mb-3">Prasmanan</h3>
+          <div data-aos="fade-right" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
+            <h3 class="text-xs md:text-xl font-semibold text-orange-400 mb-3">Prasmanan</h3>
              <div class="my-5">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/253d4a33-5bd3-44c8-8a19-2b4b8bb85c00.jpeg" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/253d4a33-5bd3-44c8-8a19-2b4b8bb85c00.jpeg" alt="" loading="lazy">
             </div>
-            <ul class="text-xs md:text-xs text-gray-700  space-y-1">
+            <ul class="text-xs md:text-xl text-gray-700  space-y-1">
               <li>Pernikahan & Syukuran</li>
               <li>Acara Kantor & Rapat</li>
               <li>Rumahan & Ulang Tahun</li>
@@ -146,12 +157,12 @@
           </div>
 
           <!-- Snack Box -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
-            <h3 class="text-xs md:text-xs font-semibold text-orange-400 mb-3">Snack Box</h3>
+          <div data-aos="fade-right" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
+            <h3 class="text-xs md:text-xl font-semibold text-orange-400 mb-3">Snack Box</h3>
              <div class="my-5">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/12e16656-7c3f-492d-851d-e3133890ae9c.png" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/12e16656-7c3f-492d-851d-e3133890ae9c.png" alt="" loading="lazy">
             </div>
-            <ul class="text-xs md:text-xs text-gray-700  space-y-1">
+            <ul class="text-xs md:text-xl text-gray-700  space-y-1">
               <li>Paket 3-4 Snack + Minum</li>
               <li>Snack Tradisional</li>
               <li>Snack Modern</li>
@@ -159,12 +170,12 @@
             <button class="text-xs md:text-xl my-1 md:my-3 py-1 px-2 rounded-sm bg-orange-400 text-white  w-15  md:w-35 text-center hover:bg-orange-600 cursor-pointer" type="submit">Pesan</button>
           </div>
           <!-- Tumpeng & Liwet -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
-            <h3 class="text-xs md:text-xs font-semibold text-orange-400 mb-3">Tumpeng & Nasi Liwet</h3>
+          <div data-aos="fade-left" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
+            <h3 class="text-xs md:text-xl font-semibold text-orange-400 mb-3">Tumpeng & Nasi Liwet</h3>
              <div class="my-5">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/1ee4a187-0908-4a5f-b1cd-73101ab26545.jpeg" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/1ee4a187-0908-4a5f-b1cd-73101ab26545.jpeg" alt="" loading="lazy">
             </div>
-            <ul class="text-xs md:text-xs text-gray-700  space-y-1">
+            <ul class="text-xs md:text-xl text-gray-700  space-y-1">
               <li>Tumpeng Mini / Komplit</li>
               <li>Nasi Liwet Dulang</li>
             </ul>
@@ -172,12 +183,12 @@
           </div>
 
           <!-- Katering Harian -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
-            <h3 class="text-xs md:text-xs font-semibold text-orange-400 mb-3">Katering Harian</h3>
+          <div data-aos="fade-left" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
+            <h3 class="text-xs md:text-xl font-semibold text-orange-400 mb-3">Katering Harian</h3>
             <div class="my-5">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/original/CATERING14.png" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto" src="./img/original/CATERING14.png" alt=""loading="lazy">
             </div>
-            <ul class="text-xs md:text-xs text-gray-700  space-y-1">
+            <ul class="text-xs md:text-xl text-gray-700  space-y-1">
               <li>Karyawan & Sekolah</li>
               <li>Rumahan & Pondokan</li>
             </ul>
@@ -185,12 +196,12 @@
           </div>
 
           <!-- Custom Acara -->
-          <div data-aos="fade-up" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
-            <h3 class="text-xs md:text-xs font-semibold text-orange-400 mb-3">Custom Acara</h3>
+          <div data-aos="fade-left" class="bg-gray-100 rounded-2xl shadow p-6 hover:shadow-lg transition border-t-4 border-b-4  border-orange-400">
+            <h3 class="text-xs md:text-xl font-semibold text-orange-400 mb-3">Custom Acara</h3>
             <div class="my-5">
-              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto " src="./img/1a826485-2819-48d6-9213-dfdeb51fcde4.png" alt="">
+              <img class=" w-[100px] h-[100px] md:w-[350px] md:h-[350px] object-cover mx-auto " src="./img/1a826485-2819-48d6-9213-dfdeb51fcde4.png" alt=""loading="lazy">
             </div>
-            <ul class="text-xs md:text-xs text-gray-700  space-y-1">
+            <ul class="text-xs md:text-xl text-gray-700  space-y-1">
               <li>Ulang Tahun Anak</li>
               <li>Syukuran & Aqiqah</li>
               <li>Lamaran & Kantoran</li>
@@ -201,17 +212,17 @@
         </div>
 
         <!-- CTA -->
-        <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+        <div class="mt-12"  data-aos-delay="600">
            <p class="text-gray-700 mb-4">Butuh paket khusus? Kami siap bantu sesuai kebutuhan Anda!</p>
             <a href="#kontak" class="inline-block bg-orange-400 text-white px-6 py-3 rounded-full shadow hover:bg-orange-600 transition">Hubungi Kami</a>
         </div>
       </div>
   </section>
 
-  <section data-aos="fade-up"id="tentang">
+  <section id="tentang">
     <div class=" text-center pt-20 w-2/3 mx-auto mb-5 mt-5">
-      <h1 class="text-3xl mb-5 font-serif">Tentang Kami</h1>
-      <p class="mb-20">Didirikan sejak(). Khaira Catering adalah layangan katering profesional yang berfokus pada rasa, Kebersihan, dan pelayanan.
+      <h1 data-aos="fade-up" class="text-3xl mb-5 font-serif">Tentang Kami</h1>
+      <p data-aos="fade-up" class="mb-20">Didirikan sejak(). Khaira Catering adalah layangan katering profesional yang berfokus pada rasa, Kebersihan, dan pelayanan.
          Kami hadir untuk memberikan pengalaman kuliner terbaik bagi setiap momen istimewa Anda, Mulai dari acara kecil hingga skala besar</p>
     </div>
   </section>
@@ -220,9 +231,9 @@
     <div class="md:flex justify-between items-center ">
       <div data-aos="fade-right" class=" w-full bg-orange-400 pl-10 rounded-r-full">
         <div class="grid grid-cols-6 ">
-          <div class="col-span-6 col-start-2 "><img class="h-81 w-60  rounded-2xl border-8 border-white"  src="/img/329c090c-f1a3-4ffd-99c0-7f17a1eb2dff.jpeg" alt=""></div>
-          <div class="col-start-1 col-end-3"><img class="h-70 w-68 rounded-2xl rounded-tr-none 0 border-8  border-white"src="./img/f156400a-4d5e-4aae-ad5c-270b4fb21378.jpeg" alt=""></div>
-          <div class="col-span-4 col-end-7 "><img class="h-70 w-80 rounded-2xl rounded-tl-none border-8   border-white" src="./img/Select from the hot breakfast buffet or oder from….jpeg" alt=""></div>
+          <div class="col-span-6 col-start-2 "><img class="h-81 w-60  rounded-2xl border-8 border-white"  src="/img/329c090c-f1a3-4ffd-99c0-7f17a1eb2dff.jpeg" alt="" loading="lazy"></div>
+          <div class="col-start-1 col-end-3"><img class="h-70 w-68 rounded-2xl rounded-tr-none 0 border-8  border-white"src="./img/f156400a-4d5e-4aae-ad5c-270b4fb21378.jpeg" alt="" loading="lazy"></div>
+          <div class="col-span-4 col-end-7 "><img class="h-70 w-80 rounded-2xl rounded-tl-none border-8   border-white" src="./img/Select from the hot breakfast buffet or oder from….jpeg" alt="" loading="lazy"></div>
         </div>
       </div>
       <div data-aos="fade-left" class="w-full md:w-2/3 md:h-151">
@@ -260,65 +271,123 @@
 
       <div class=" w-full ">
         <div data-aos="fade-left" class="grid grid-cols-6 bg-orange-400 rounded-l-full pl-25">
-          <div  class="col-span-6 col-start-2 "><img class="h-81 w-60  rounded-2xl border-8 border-white "  src="/img/329c090c-f1a3-4ffd-99c0-7f17a1eb2dff.jpeg" alt=""></div>
-          <div class="col-start-1 col-end-3"><img class="h-70 w-68 rounded-2xl rounded-tr-none 0 border-8 border-white"src="./img/f156400a-4d5e-4aae-ad5c-270b4fb21378.jpeg" alt=""></div>
-          <div class="col-span-4 col-end-7 "><img class="h-70 w-80 rounded-2xl rounded-tl-none border-8  border-white" src="./img/Select from the hot breakfast buffet or oder from….jpeg" alt=""></div>
+          <div  class="col-span-6 col-start-2 "><img class="h-81 w-60  rounded-2xl border-8 border-white "  src="/img/7f59ee09-a73f-4885-9c11-46effb8d1b26.jpeg" alt=""loading="lazy"></div>
+          <div class="col-start-1 col-end-3"><img class="h-70 w-68 rounded-2xl rounded-tr-none 0 border-8 border-white"src="./img/a258b591-373d-467c-b4bf-2d9a68fba53a.jpeg" alt=""loading="lazy"></div>
+          <div class="col-span-4 col-end-7 "><img class="h-70 w-80 rounded-2xl rounded-tl-none border-8  border-white" src="./img/a258b591-373d-467c-b4bf-2d9a68fba53a.jpeg" alt=""loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
+
+  
+
 
   <section class="">
     <div class="text-center pt-10  m-auto ">
       <h1 class="text-3xl font-normal  mb-10 font-serif">Tim Kami</h1>
       <p class="w-2/4 mx-auto text-lg">Di balik setiap hidangan lezat, ada tim hebat yang bekerja dengan cinta dan perhatian. Bersama, kami siap menghadirkan kelezatan dan kebahagiaan di setiap sajian.</p>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 lg:gap-10 md:gap-5 gap-4 my-10 justify-center items-center lg:mx-40 md:mx-25 mx-15 text-center">
+    <div class="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 lg:gap-10 md:gap-5 gap-4 my-10 justify-center items-center lg:mx-40 md:mx-25 mx-15 text-center">
         <div data-aos="flip-right" class="bg-gray-100 rounded-2xl shadow-lg border-t-4 border-b-4  border-orange-400">
-          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6 ">
+          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6 " loading="lazy">
           <h3 class="py-3 font-bold font-serif">Faqih Rizky Al-Faiz</h3>
           <p class="pb-3">Owner</p>
         </div>
          <div data-aos="flip-right" class="bg-gray-100 rounded-2xl shadow-lg border-t-4 border-b-4  border-orange-400">
-          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6">
-          <h3 class="py-3 font-bold font-serif">Faqih Rizky Al-Faiz</h3>
+          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6"loading="lazy">
+          <h3 class="py-3 font-bold font-serif">Patri Retta Siana</h3>
           <p class="pb-3">Catering Manager</p>
         </div>
          <div data-aos="flip-left" class="bg-gray-100 rounded-2xl shadow-lg border-t-4 border-b-4  border-orange-400">
-          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6">
-          <h3 class="py-3 font-bold font-serif">Faqih Rizky Al-Faiz</h3>
+          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6" loading="lazy">
+          <h3 class="py-3 font-bold font-serif">Andhika Bagus Priyotomo</h3>
           <p class="pb-3">Executive Chef</p>
         </div>
-         <div data-aos="flip-left" class="bg-gray-100 rounded-2xl shadow-lg border-t-4 border-b-4  border-orange-400">
-          <img src="./img/PngItem_4042710.png " alt="" class="w-2/4 mx-auto rounded-full py-6">
-          <h3 class="py-3 font-bold font-serif">Faqih Rizky Al-Faiz</h3>
-          <p class="pb-3">Executive Chef</p>
-        </div>
+        
     </div>
   </section>
 
-  <footer class="bg-orange-400 transition pb-10 lg:pb-0 " id="kontak">
-    <h3 data-aos="fade-up" class="text-2xl font-serif text-white text-center py-6">Kontak Kami</h3>
+  <section class="inline md:hidden">
+      <div class="relative">
+          <button data-aos="fade-right" id="buttonLeftTestimoni" class="absolute left-8 top-48 z-2 bg-orange-400 text-white hover:bg-orange-600  rounded-full w-10 h-10 m-auto "><i class="fa-solid fa-arrow-left fa-xs hover:scale-100"></i></button>
+          <button data-aos="fade-left" id="buttonRighTestimoni"  class="absolute top-48 z-2 bg-orange-400 text-white h-10 w-10 rounded-full right-8  hover:bg-orange-600 "><i class="fa-solid fa-arrow-right fa-xs"></i></button>
+      </div>
+    </section>
+
+  <section data-aos="fade-up" id="testimoni" class="my-20 lg:mx-40 md:mx-25 mx-15 ">
+    <h2 class="text-3xl mb-10 text-center font-serif ">Testimoni Pelanggan</h2>
+    <div class=" harizontalscrolbar flex overflow-x-auto md:overflow-hidden  md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-300" id="testimoni-container" ></div>
+  </section>
+
+  <section class="max-w-5xl mx-auto my-10 ">
+    <h1 class="text-2xl font-serif text-center mb-6">Galeri Foto Produk</h1>
+    <div class="bg-gray-100 rounded-2xl shadow-lg border-t-4 border-b-4  border-orange-400 mx-15 p-5 md:p-5">
+    <!-- Slider Utama -->
+    <div id="main-slider" class="splide mb-4">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="img/original/CATERING1.jpg" class="w-full  rounded-lg shadow " /></li>
+          <li class="splide__slide"><img src="img/original/CATERING2.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING3.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING4.jpg" class="w-full  rounded-lg shadow" /></li>
+          <!-- <li class="splide__slide"><img src="img/original/CATERING5.jpg" class="w-full  rounded-lg shadow" /></li> -->
+          <!-- <li class="splide__slide"><img src="img/original/CATERRIN6.jpg" class="w-full  rounded-lg shadow" /></li> -->
+          <li class="splide__slide"><img src="img/original/CATERING7.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING8.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING9.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING10.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING11.jpg" class="w-full  rounded-lg shadow" /></li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <!-- Thumbnail -->
+    <div id="thumbnail-slider" class="splide">
+      <div class="splide__track">
+         <ul class="splide__list">
+           <li class="splide__slide"><img src="img/original/CATERING1.jpg" class="w-full  rounded-lg shadow " /></li>
+          <li class="splide__slide"><img src="img/original/CATERING2.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING3.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING4.jpg" class="w-full  rounded-lg shadow" /></li>
+          <!-- <li class="splide__slide"><img src="img/original/CATERING5.jpg" class="w-full  rounded-lg shadow" /></li> -->
+          <!-- <li class="splide__slide"><img src="img/original/CATERRIN6.jpg" class="w-full  rounded-lg shadow" /></li> -->
+          <li class="splide__slide"><img src="img/original/CATERING7.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING8.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING9.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING10.jpg" class="w-full  rounded-lg shadow" /></li>
+          <li class="splide__slide"><img src="img/original/CATERING11.jpg" class="w-full  rounded-lg shadow" /></li>
+          
+        </ul>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <footer data-aos="fade-down" class="bg-orange-400 transition pb-10 lg:pb-0 mt-20" id="kontak">
+    <h3  class="text-2xl font-serif text-white text-center py-6">Kontak Kami</h3>
     <div class="lg:flex justify-between lg:mx-35 md:mx-20 mx-20 lg:py-15 md:py-1 md:grid md:grid-cols-2">
       <div class="lg:w-1/3 text-white">
-        <h3 data-aos="fade-up" class="text-xl font-semibold my-4 md:mx-3">Lokasi</h3>
-        <p data-aos="fade-up" class="">Jl. Pucang No.48, Rejamulya, Gumilir, Kec. Cilacap Utara, Kabupaten Cilacap, Jawa Tengah 53231</p>
+        <h3  class="text-xl font-semibold my-4 ">Lokasi</h3>
+        <p  class="">Jl. Pucang No.48, Rejamulya, Gumilir, Kec. Cilacap Utara, Kabupaten Cilacap, Jawa Tengah 53231</p>
       </div>
       <div class="text-white">
-        <h3 data-aos="fade-up" class="text-xl font-semibold my-4 ">Follow Us</h3>
-        <ul data-aos="fade-up" class="flex gap-5 jus">
-          <li><a href=""><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
-          <li><a href=""><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
-          <li><a href=""><i class="fa-brands fa-x-twitter fa-2xl"></i></a></i></li>
+        <h3  class="text-xl font-semibold my-4 ">Follow Us</h3>
+        <ul  class="flex gap-5 jus">
+          <li><a class="hover:text-orange-600 transition-colors duration-300" href=""><i class="fa-brands fa-facebook fa-2xl cursor-pointer "></i></a></li>
+          <li><a class="hover:text-orange-600 transition-colors duration-300"><i class="fa-brands fa-instagram fa-2xl cursor-pointer"></i></a></li>
+          <li><a class="hover:text-orange-600 transition-colors duration-300" href=""><i class="fa-brands fa-x-twitter fa-2xl cursor-pointer"></i></a></i></li>
         </ul>
        </div>
         <div class="text-white ">
-          <h3 data-aos="fade-up" class="text-xl font-semibold mt-4 mb-2" >Contact number</h3>
-          <p data-aos="fade-up" class="mb-10">+62 8xx xxxx xxxx</p>
+          <h3  class="text-xl font-semibold mt-4 mb-2" >Contact number</h3>
+          <p  class="mb-10"><a href="https://wa.me/6285876192926">+628-5876-1929-26</a></p>
        </div>
         <div class="lg:w-2/6 bg-gray-200 text-center p-4 shadow-lg rounded-md  ">
-        <form data-aos="fade-up" action="">
-          <h3 data-aos="fade-up" class="text-xl mb-2">Contact Form</h3>
+        <form  action="">
+          <h3  class="text-xl mb-2">Contact Form</h3>
           <div>
             <input class="w-full focus:outline-0  p-1 pl-3 rounded-sm bg-gray-50 focus:bg-white my-1" type="text" placeholder="Masukan Nama Anda">
           </div>
@@ -333,7 +402,9 @@
       </div>
     </div>
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
