@@ -31,7 +31,6 @@ hamburger.addEventListener('click', function() {
     menu.classList.remove('flex');
     menu.classList.remove('translate-y-0','opacity-100')
     menu.classList.add('-translate-y-10','opacity-0');
-    // Sembunyikan setelah transisi
     setTimeout(() => {
       menu.classList.add('hidden');
     }, 500); // Sesuai duration-500
