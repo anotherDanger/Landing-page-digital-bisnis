@@ -96,7 +96,7 @@ const testimoniData = [
 
   testimoniData.forEach(testi => {
     const card = document.createElement("div");
-    card.className = "bg-gray-100 p-4 rounded-lg shadow-lg border-t-4 border-b-4 border-orange-400 min-h-60 min-w-60";
+    card.className = "bg-gray-100 p-4 rounded-lg shadow-lg min-h-60 min-w-60";
     card.innerHTML = `
       <strong class="text-lg text-gray-800">${testi.nama}</strong>
       <p class="mt-2 italic text-gray-600 ">"${testi.komentar}"</p>
