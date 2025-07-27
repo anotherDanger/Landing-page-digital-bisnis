@@ -1,4 +1,3 @@
-
 AOS.init({
     duration: 500,
     once: false,        // supaya bisa animasi berkali-kali
@@ -169,5 +168,4 @@ buttonRightTestimoni.addEventListener('click',function(){
       main.mount();
       thumbnails.mount();
     });
-
 
